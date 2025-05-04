@@ -1,0 +1,25 @@
+﻿<Window x:Class="UpperCaseConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UpperCaseConverter"
+        mc:Ignorable="d"
+        Title="Convertisseur en Majuscules" Height="575" Width="883">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="Entrez une chaîne (1-8 caractères):"/>
+        <TextBox Grid.Row="1" Text="{Binding InputString, UpdateSourceTrigger=PropertyChanged}" Margin="0,5"/>
+
+        <Button Grid.Row="2" Content="Convertir" Command="{Binding ConvertCommand}" Margin="0,10" Padding="10,3"/>
+
+        <Label Grid.Row="3" Content="Résultat:"/>
+        <TextBox Grid.Row="4" Text="{Binding OutputString, Mode=OneWay}" IsReadOnly="True" Margin="0,5" Background="#FFF0F0F0"/>
+    </Grid>
+</Window>
